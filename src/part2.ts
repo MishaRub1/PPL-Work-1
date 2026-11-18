@@ -25,4 +25,7 @@ export type WordTree = {
     children: WordTree[];
 }
 
-export const treeToSentence = (t: WordTree): string => undefined as any;;
+export const treeToSentence = (t: WordTree): string => 
+    t.children
+        .map((child: WordTree) => treeToSentence(child))
+        .reduce((acc: string, curr: string) => acc + " " + curr, t.root);
