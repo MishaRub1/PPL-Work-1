@@ -6,7 +6,7 @@ const stringToArray = R.split("");
 const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
 export const countVowels: (s: string) => number = (s: string): number =>
     stringToArray(s).map((c: string) => c.toLowerCase()).filter((c: string) => vowels.includes(c)).length;
-    
+
 /* Question 2.2 */
 
 const lettersAndDigits: string[] = stringToArray("abcdefghijklmnopqrstuvwxyz0123456789");
@@ -25,7 +25,7 @@ export type WordTree = {
     children: WordTree[];
 }
 
-export const treeToSentence = (t: WordTree): string => 
+export const treeToSentence = (t: WordTree): string =>
     t.children
         .map((child: WordTree) => treeToSentence(child))
         .reduce((acc: string, curr: string) => acc + " " + curr, t.root);
