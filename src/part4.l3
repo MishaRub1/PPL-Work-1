@@ -1,15 +1,30 @@
+; Signature: last-item(lst)
+; Type: [List(T) -> T]
+; Purpose: Return the last item of lst
+; Pre-conditions: lst is not empty
+; Tests: (last-item '(1 2 3)) => 3
 (define last-item
   (λ (lst)
     (if (eq? (cdr lst) '())
         (car lst)
         (last-item (cdr lst)))))
 
+; Signature: remove-last-item(lst)
+; Type: [List(T) -> List(T)]
+; Purpose: Return lst without its last item
+; Pre-conditions: lst is not empty
+; Tests: (remove-last-item '(1 2 3)) => '(1 2)
 (define remove-last-item
   (λ (lst)
     (if (eq? (cdr lst) '())
         '()
         (cons (car lst) (remove-last-item (cdr lst))))))
 
+; Signature: rotate-nth(lst, n)
+; Type: [List(T) * Number -> List(T)]
+; Purpose: Rotate lst n times to the right
+; Pre-conditions: n is a non-negative integer
+; Tests: (rotate-nth '(1 2 3) 1) => '(3 1 2)
 (define rotate-nth
   (λ (lst n)
    (if (eq? lst '())
@@ -19,6 +34,11 @@
             (rotate-nth (cons (last-item lst) (remove-last-item lst))
                         (- n 1))))))
 
+; Signature: add-last(lst, x)
+; Type: [List(T) * T -> List(T)]
+; Purpose: Return lst with x added as its last item
+; Pre-conditions: true
+; Tests: (add-last '(1 2) 3) => '(1 2 3)
 (define add-last
   (λ (lst x)
     (if (eq? lst '())
@@ -26,6 +46,11 @@
         (cons (car lst) (add-last (cdr lst) x)))))
 
 
+; Signature: deep-reverse(l)
+; Type: [List -> List]
+; Purpose: Reverse l and every nested list inside it
+; Pre-conditions: true
+; Tests: (deep-reverse '(1 (2 3) (4 5))) => '((5 4) (3 2) 1)
 (define deep-reverse
   (λ (l)
     (if (eq? l '())
