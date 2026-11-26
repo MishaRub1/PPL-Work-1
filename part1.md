@@ -11,9 +11,9 @@ Submit the solution to this part as `part1.md`.
 2. [5 points] How does the object oriented paradigm improve over the imperative paradigm?
 3. [5 points] How does the functional paradigm improve over the object oriented paradigm?
 
-**Answer (handwritten):** see also `HW1Q1.pdf` / `HW1Q1.png`.
+**Answer (handwritten):** see also `HW1Q1.pdf` / `images/HW1Q1.png`.
 
-![Question 1.1 handwritten answers](HW1Q1.png)
+![Question 1.1 handwritten answers](images/HW1Q1.png)
 
 **Answer (typed):**
 
